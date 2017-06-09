@@ -11,7 +11,7 @@ Dotenv.load
 Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
 
 use Rack::Session::EncryptedCookie,
-  :secret => 'replace_me_with_a_real_secret_key' # Actually use something secret here!
+  :secret => 'replace_me_with_a_real_secret_key' #use something secret here
 
 get '/' do
   status 200
@@ -126,6 +126,8 @@ end
 # to add its URL (https://{your-app-name}.herokuapp.com/stripe-webhook)
 # in the webhook settings section of the Dashboard.
 # https://dashboard.stripe.com/account/webhooks
+
+#CHECK IF NEED
 post '/stripe-webhook' do
   json = JSON.parse(request.body.read)
 
